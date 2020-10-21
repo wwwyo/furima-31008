@@ -23,7 +23,6 @@
 
 | Column          | Type          | Options                        |
 | --------------- | ------------- | ------------------------------ |
-| image           | ActiveStorage | null: false                    |
 | title           | string        | null: false                    |
 | text            | text          | null: false                    |
 | genre_id        | integer       | null: false                    |
