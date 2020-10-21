@@ -11,7 +11,7 @@
 | first_name      | string  | null: false |
 | last_name_kana  | strung  | null: false |
 | first_name_kana | string  | null: false |
-| birth_day       | date | nill: false |
+| birth_day       | date    | null: false |
 
 
 ### Association
@@ -32,7 +32,7 @@
 | prefecture_id   | integer       | null: false                    |
 | days_id         | integer       | null: false                    |    
 | price           | integer       | null: false                    |
-| user_id         | references    | null: false, foreign_key: true |
+| user            | references    | null: false, foreign_key: true |
 
 
 ### Association
@@ -44,8 +44,8 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| user_id | references | null: false, foreign_key: true |
-| item_id | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -62,8 +62,8 @@
 | delivery_town          | string     | null: false                   |
 | delivery_number        | string     | null: false                   |
 | delivery_building      | string     |                               |
-| phon_number            | integer    | null: false                   |
-| order_id               | references | null: false, foreign_key:true | 
+| phon_number            | string     | null: false                   |
+| order                  | references | null: false, foreign_key:true | 
 
 ### Association
 
