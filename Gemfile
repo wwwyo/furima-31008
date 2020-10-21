@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'gimei'
 end
 
 group :development do
@@ -60,3 +61,4 @@ group :development do
 end
 gem 'devise'
 gem 'pry-rails'
+
