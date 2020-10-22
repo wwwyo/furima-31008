@@ -6,7 +6,7 @@
 | --------------- | ------- | ----------- |
 | email           | string  | null: false |
 | password        | string  | null: false |
-| nick_name       | string  | null: false |
+| nickname        | string  | null: false |
 | last_name       | string  | nill: false |
 | first_name      | string  | null: false |
 | last_name_kana  | strung  | null: false |
