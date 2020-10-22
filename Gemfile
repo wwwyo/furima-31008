@@ -61,4 +61,6 @@ group :development do
 end
 gem 'devise'
 gem 'pry-rails'
-
+group :production do
+  gem 'rails_12factor'
+end
