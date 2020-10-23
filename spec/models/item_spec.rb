@@ -33,31 +33,31 @@ RSpec.describe Item, type: :model do
       it '商品のカテゴリーを選択していない' do
         @item.genre_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Genre must be other than 1")
+        expect(@item.errors.full_messages).to include('Genre must be other than 1')
       end
 
       it '商品の状態を選択していない' do
         @item.state_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("State must be other than 1")
+        expect(@item.errors.full_messages).to include('State must be other than 1')
       end
 
       it '商品の配送料の負担を選択していない' do
         @item.shipping_fee_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping fee must be other than 1")
+        expect(@item.errors.full_messages).to include('Shipping fee must be other than 1')
       end
 
       it '商品の発送元地域を選択していない' do
         @item.prefecture_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
       end
 
       it '商品の日数を選択していない' do
         @item.delivery_date_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery date must be other than 1")
+        expect(@item.errors.full_messages).to include('Delivery date must be other than 1')
       end
 
       it '価格が空欄' do
@@ -73,7 +73,7 @@ RSpec.describe Item, type: :model do
       end
 
       it '価格が10000000円以上' do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
