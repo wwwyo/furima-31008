@@ -31,33 +31,33 @@ RSpec.describe Item, type: :model do
       end
 
       it '商品のカテゴリーを選択していない' do
-        @item.genre_id = ''
+        @item.genre_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Genre can't be blank")
+        expect(@item.errors.full_messages).to include("Genre must be other than 1")
       end
 
       it '商品の状態を選択していない' do
-        @item.state_id = ''
+        @item.state_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("State can't be blank")
+        expect(@item.errors.full_messages).to include("State must be other than 1")
       end
 
       it '商品の配送料の負担を選択していない' do
-        @item.shipping_fee_id = ''
+        @item.shipping_fee_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping fee can't be blank")
+        expect(@item.errors.full_messages).to include("Shipping fee must be other than 1")
       end
 
       it '商品の発送元地域を選択していない' do
-        @item.prefecture_id = ''
+        @item.prefecture_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
       end
 
       it '商品の日数を選択していない' do
-        @item.delivery_date_id = ''
+        @item.delivery_date_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery date can't be blank")
+        expect(@item.errors.full_messages).to include("Delivery date must be other than 1")
       end
 
       it '価格が空欄' do
@@ -66,13 +66,13 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
 
-      it '価格が300円以下' do
+      it '価格が300円未満' do
         @item.price = '100'
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
 
-      it '価格が9999999円以上' do
+      it '価格が10000000円以上' do
         @item.price = '10000000'
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
