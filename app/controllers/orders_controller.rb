@@ -1,11 +1,14 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!
-
   def index
     @item = Item.find(params[:item_id])
     @order_form = OrderForm.new
-    redirect_to root_path if current_user.id == @item.user_id
-    redirect_to root_path if Order.find_by(item_id: @item.id)
+    if Order.find_by(item_id: @item.id)
+      redirect_to root_path
+    elsif user_signed_in? == false
+      redirect_to new_user_session_path
+    elsif current_user.id == @item.user_id
+      redirect_to root_path
+    end
   end
 
   def create
