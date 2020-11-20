@@ -1,6 +1,9 @@
 # テーブル設計
 
 ## users テーブル
+```ruby
+git push
+```
 
 | Column          | Type    | Options     |
 | --------------- | ------- | ----------- |
